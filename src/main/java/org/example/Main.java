@@ -2,12 +2,12 @@ package org.example;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 
 
-interface Shape
+abstract class Shape
 {
-    public String getName();
+    abstract public String getName();
 }
 
-class Square implements Shape
+class Square extends Shape
 {
 
     public String getName()
@@ -16,7 +16,7 @@ class Square implements Shape
     }
 }
 
-class Circle implements Shape
+class Circle extends Shape
 {
     public String getName()
     {
@@ -24,20 +24,20 @@ class Circle implements Shape
     }
 }
 
-class Rectangel implements Shape
+class Rectangel extends Shape
 {
     public String getName()
     {
         return "Rectangel";
     }
 }
-class Line implements Shape
+class Line extends Shape
 {
     public String getName() {
         return "Line";
     }
 }
-class Oval implements Shape
+class Oval extends Shape
 {
     public String getName()
     {
@@ -47,27 +47,8 @@ class Oval implements Shape
 
 class ShapeReader
 {
-    public void read(Shape shape)
+    public void shapeReader(Shape shape)
     {
         System.out.println(shape.getName());
-    }
-}
-
-class ShapeReaderTest
-{
-    public static void main(String[] args)
-    {
-        var test = new ShapeReader();
-
-        test.read(new Circle());
-
-        test.read(new Oval());
-
-        test.read(new Line());
-
-        test.read(new Square());
-
-        test.read(new Rectangel());
-
     }
 }
