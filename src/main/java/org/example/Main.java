@@ -7,9 +7,9 @@ class Main
 {
     public static void main(String[] args) {
 
-       UserInterface intface = new UserInterface();
+       ShapeReader reader = new ShapeReader();
 
-       intface.ShapeIndexInput();
+       reader.shapeReader(new UserInterface().ShapeIndexInput());
 
     }
 }

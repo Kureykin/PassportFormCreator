@@ -7,6 +7,9 @@ class ShapeReader
 
     public void shapeReader(Shape shape)
     {
-        System.out.println(shape.getName());
+        if(shape == null)
+            System.out.println("Unknow shape ID");
+        else
+            System.out.println(shape.getName());
     }
 }
