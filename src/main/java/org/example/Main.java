@@ -1,54 +1,38 @@
 package org.example;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 
+import java.util.Scanner;
 
-abstract class Shape
+class Main
 {
-    abstract public String getName();
-}
+    public static void main(String[] args) {
 
-class Square extends Shape
-{
+        var reader = new ShapeReader();
+        Scanner scanner = new Scanner(System.in);
 
-    public String getName()
-    {
-        return "Square";
-    }
-}
+        System.out.println("List of Shapes: \n1 - Square \n2 - Circle \n3 - Line \n4 - Oval \n5 - Rectangel\n");
+        System.out.print("Please, write your choice \n>> ");
+        int result = scanner.nextInt();
+        scanner.close();
 
-class Circle extends Shape
-{
-    public String getName()
-    {
-        return "Circle";
-    }
-}
+        switch (result)
+        {
+            case 1:
+                reader.shapeReader(new Square());
+                break;
+            case 2:
+                reader.shapeReader(new Circle());
+                break;
+            case 3:
+                reader.shapeReader(new Line());
+                break;
+            case 4:
+                reader.shapeReader(new Oval());
+                break;
+            case 5:
+                reader.shapeReader(new Rectangel());
+                break;
+        }
 
-class Rectangel extends Shape
-{
-    public String getName()
-    {
-        return "Rectangel";
-    }
-}
-class Line extends Shape
-{
-    public String getName() {
-        return "Line";
-    }
-}
-class Oval extends Shape
-{
-    public String getName()
-    {
-        return "Oval";
-    }
-}
-
-class ShapeReader
-{
-    public void shapeReader(Shape shape)
-    {
-        System.out.println(shape.getName());
     }
 }
